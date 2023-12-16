@@ -1,0 +1,69 @@
+package br.com.mercadoTeste;
+
+import java.util.Scanner;
+
+public class teste02 {
+
+	public static void main(String[] args) {
+	   
+	 
+	  ControladorDeMetodos controladorDeMetodos = new ControladorDeMetodos();
+      Scanner scanner = new Scanner(System.in);
+      int opção = 0;
+      
+      
+	  
+	  while(opção != 4) {
+		  
+		  System.out.println("-------------------------");
+		  System.out.println("|     Mercado Da Vila   |");
+		  System.out.println("|-----------------------|");
+		  System.out.println("| (1)     Produtos      |");
+		  System.out.println("| (2) Adiciona produtos |");
+		  System.out.println("| (3)   busca produtos  |");
+		  System.out.println("| (4)      sair         |");
+		  System.out.println("-------------------------");
+		   opção = scanner.nextInt();
+		      System.out.println();
+		   
+		   
+		   switch (opção) {
+		   		case 1 : {
+			
+			     break;
+		   		}
+		   		
+		   		case 2: {
+		   			controladorDeMetodos.AdicionaProdutos();
+		   	     break;		
+		   		}
+		   		case 3: {
+		   			controladorDeMetodos.opçõesDeBuscaDeProduto();
+		   			break;
+		   		}
+		   		case 4: {
+		   			System.out.println("Saindo...");
+		   			break;
+		   		}
+		   		
+		   		default:
+		   			throw new IllegalArgumentException("Unexpected value: " + opção);
+		   		}
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+	  }
+	  
+	  
+	  
+
+	}
+
+}
