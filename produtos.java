@@ -9,7 +9,7 @@ public class produtos {
       private int    quantidade;      
       private int    codigoProduto;
       
-      
+      //CONSTRUTOR
       public produtos(int codigoProduto,String produto, int quantidade, double preco ) {
 	     this.codigoProduto = codigoProduto;
     	 this.produtos = produto;
@@ -19,7 +19,7 @@ public class produtos {
 	  }
       
        
-      
+      //GETTER E SETTERS
       public String getProdutos() {
 		return produtos;
 	}
@@ -33,14 +33,23 @@ public class produtos {
     	
 		return codigoProduto;
 	}
-
+  
       
-
-//      @Override
-//      public String toString() {
-//          return "Produto: " + produtos + ", Preço: " + preco + ", Quantidade: " + quantidade + ", Código do Produto: " + codigoProduto;
-//      }
-
-
+      //METODOS INTERNOS 
+      
+      //TOTAL DE VALOR INVESTIDO NO ESTOQUE
+      public double totalValueInStock() {
+    	   return quantidade * preco;
+      }
+      
+      //METODOS ADICIONA UNIDADE
+      public void AddUnidade(int quantidade) {
+    	  this.quantidade += quantidade;
+      }
+      
+      //METODO REMOVE UNIDADE 
+      public void RemoveUnidade(int quantidade) {
+    	 this.quantidade -= quantidade;
+      }
 
 }
