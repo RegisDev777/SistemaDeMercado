@@ -84,6 +84,26 @@ public class ControladorDeMetodos {
            	}
     }
 
+    //CONTROLADOR PARA DAR BAIXAS NA SAIDA DE PRODUTOS
+    public void ControleDeSaidaDeProduto() {
+       System.out.println("-----------------------------------");	
+       System.out.println("|         Baixa de Produtos       |");	
+       System.out.println("-----------------------------------");	
+       System.out.print("produto: ");
+        String produto = scanner.nextLine().toLowerCase();
+          produtos confimraProdutoDeBaixa = controladorDeProdutos.VerificaIdOuNome(produto);
+          if (confimraProdutoDeBaixa != null) {
+              System.out.print("Quantas Unidade gostaria de dar baixa?");
+              int unidade = scanner.nextInt();
+              controladorDeProdutos.RemoveUnidade(unidade);
+          }
+      System.out.println("-----------------------------------");
+      System.out.println();
+      
+       
+       
+    }
+    
      //CONTROLADOR PARA BUSCA PRODUTOS
 	public void opçõesDeBuscaDeProduto() {
      System.out.println("-----------------------------");
@@ -95,6 +115,11 @@ public class ControladorDeMetodos {
 	 System.out.println("-----------------------------");
 	 System.out.println();
      }
+	
+	
+	
+	
+	
 	
 	
 }

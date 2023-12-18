@@ -30,6 +30,7 @@ public class teste02 {
 		   
 		   
 		   switch (opção) {
+		   
 		   		case 1 : {
 			         controladorDeMetodos.produtosNoEstoque();
 			     break;
@@ -39,21 +40,26 @@ public class teste02 {
 		   			controladorDeMetodos.AdicionaProdutos();
 		   	     break;		
 		   		}
+		   		
 		   		case 3: {
 		   			controladorDeMetodos.opçõesDeBuscaDeProduto();
 		   			break;
 		   		}
+		   		
 		   		case 4: {
-		   			
+		   	        controladorDeMetodos.ControleDeSaidaDeProduto();
 		   			break;
 		   		}
+		   		
 		   		case 5: {
 
 		   		}
+		   		
 		   		case 6: {
 		   			System.out.println("Saindo...");
 		   			break;
 		   		}
+		   		
 		   		default:
 		   			throw new IllegalArgumentException("Unexpected value: " + opção);
 		   		}

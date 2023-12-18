@@ -64,6 +64,14 @@ public class controladorDeProdutos {
 	   	 }
 	   }
 
+	   //METODO DE REMOVE UNIDADE
+	   public void RemoveUnidade(int unidade) {
+		   for (produtos produtos : produtosCadastrados) {
+			produtos.RemoveUnidade(unidade);
+			System.out.println("Baixa com sucesso!");
+		}
+	   }
+	   
 	   //METODO PRA VER TOTAL DE ESTOQUE
 	   public void produtsTotalEstoque() {
 		   int contador = 1;
@@ -77,8 +85,6 @@ public class controladorDeProdutos {
 	      }  		   	
 	   }
 	   
-	   
-	   //METODO PRA PRA ADICIONA PRODUTO
 	   //METODO PARA ADICIONA PRODUTO HASHMAP
 	   public void adicionaProdutoHash(produtos produtosID) {
 		    this.produtosCadastrados.add(produtosID);
