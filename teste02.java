@@ -71,7 +71,6 @@ public class teste02 {
 	  }
 	  
 	  
-	     scanner.close();
 
 	}
 

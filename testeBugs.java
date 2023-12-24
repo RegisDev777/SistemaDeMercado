@@ -5,22 +5,12 @@ import java.util.Locale;
 public class testeBugs {
    public static void main(String[] args) {
 	   
-	   
-	   Locale.setDefault(null);
-	   
-	   produtos p1 = new produtos(234, "bolo", 23, 10.90);
-
-       controladorDeProdutos c1 = new controladorDeProdutos();
-       
-       c1.adicionaProdutoHash(p1);
-       
-     
-	   String p = "BOLO";
-       
-       c1.buscaProdutoPeloNome(p);
-	   c1.buscaProdutosId(234);
-			   
-			   
+      produtos p1 = new produtos(123, "cafe", 25, 5.50, 8.50);  
+      ControladorDeMetodos ct1 = new ControladorDeMetodos();
+      controladorDeProdutos cp1 = new controladorDeProdutos();
+      
+      
+    System.out.println(p1.totalInvestimento());
 			   
 	   
 	   

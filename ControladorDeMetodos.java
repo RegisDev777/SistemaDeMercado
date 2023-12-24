@@ -1,12 +1,11 @@
  package br.com.mercadoTeste;
 
-import java.util.Iterator;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class ControladorDeMetodos {
 	
-	//VARIAVEL DA FINANCIAS ==> BAIXA DE PRODUTOS 
+	//VARIAVEL DA FINANCIAS ==> BAIXA DE PRODUTOS 0
 	double precosDaVendas;
 
    controladorDeProdutos controladorDeProdutos = new controladorDeProdutos();
@@ -120,6 +119,7 @@ public class ControladorDeMetodos {
 	    	System.out.println("--------------------------");
 			  opcao = scanner.nextInt();
 			    scanner.nextLine();
+			       System.out.println();
 			    	switch (opcao) {
 			    		case 1: { 
 			    			
@@ -133,7 +133,7 @@ public class ControladorDeMetodos {
 			    	        	   System.out.print("Quantas unidades gostaria de dar baixa?");
 			    	                int  quantidadeBaixa = scanner.nextInt();
 			    	                double  valorDeVendas = produtoParaBaixa.removeUnidade(quantidadeBaixa);
-			    	                precosDaVendas = valorDeVendas;
+			    	                  precosDaVendas = valorDeVendas;
 			    	                System.out.println("Baixa realizada com sucesso! ");
 			    	                System.out.println("-----------------------------------");
 			    	                System.out.println();
@@ -143,30 +143,47 @@ public class ControladorDeMetodos {
 			         	}
 			    		
 			    		case 2: {
-			    		      System.out.println("------------------------------------");
-			    		      System.out.println("|               Vendas             |");
-			    		      System.out.println("------------------------------------");
-			    		      System.out.println("Produto / Id:");
-			    		        String produtoAprocura = scanner.nextLine();
-			    		           produtos existe = controladorDeProdutos.FinanicaIdOuNome(produtoAprocura);	    
-			    		              controladorDeProdutos.InvestimentoFeitoXLucroObtidoNoProduto(existe);
-			    			        	System.out.println("vendas: " + precosDaVendas + " Reais");	  
-			    			  System.out.println("------------------------------------");
-			    			         System.out.println();
-			    		   break;        
+			    			 System.out.println("------------------------------------");
+			    			    System.out.println("|               Vendas             |");
+			    			    System.out.println("------------------------------------");
+			    			    System.out.println("Produto / Id:");
+			    			    String produtoAprocura = scanner.nextLine();
+			    			    produtos existe = controladorDeProdutos.FinanicaIdOuNome(produtoAprocura);
+
+			    			    if (existe != null) {
+
+
+			    			        System.out.println(controladorDeProdutos.InvestimentoFeitoXLucroObtidoNoProduto(existe));
+			    			        System.out.println("Saídas: " + existe.getModificadoresProdutos().getQuantidadeBaixa());
+			    			        System.out.println("Total de Lucro vendido: " + existe. getModificadoresProdutos().TotalDeVendas()+ " Reais");
+			    			    }
+
+			    			    System.out.println("------------------------------------");
+			    			    System.out.println();
+			    			    break;	    			  
 			    		}
 			    		
 			    		case 3: {
+			    			    System.out.println("---------------------------------");
+			    			    System.out.println("|         Lucros liquidos       |");
+			    			    System.out.println("---------------------------------");
+			    			    controladorDeProdutos.LucroDaVendas();
+			    			    System.out.println("---------------------------------");
+			    			    System.out.println();
 			    			break;
 			    		}
 			    		
-			    		case 4: {
-			    			
+			    		case 4: {	
+			    			System.out.println("---------------------------------");
+		    			    System.out.println("|         Total de vendas       |");
+		    			    System.out.println("---------------------------------");
+			    			controladorDeProdutos.TotalDeVendas();
+			    			System.out.println("---------------------------------");
+			    			System.out.println();
 			    			break;
 			    		}
 			    		
-			    		case 5: {
-			    			
+			    		case 5: {	    			
 			    			break;
 			    		}
 			    		
@@ -177,7 +194,6 @@ public class ControladorDeMetodos {
 		}      
 	}
 	
-	
-	
+
 	}
 }

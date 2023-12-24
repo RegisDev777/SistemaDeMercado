@@ -28,11 +28,10 @@ public class controladorDeProdutos {
 	   //METODOS DE ACRESENTA UNIDAE
 	   public void AcrescentaUnidade(int unidade) {
 		 for (produtos produtos : produtosCadastrados) {
-		    produtos.AddUnidade(unidade);	
-		    System.out.println("Estoque atualizado!");
+		    produtos.AddUnidade(unidade);		    
 	   	 }
+		 System.out.println("Estoque atualizado!");
 	   }
-
 	
 	   //METODO PRA VER TOTAL DE ESTOQUE
 	   public void produtsTotalEstoque() {
@@ -54,32 +53,59 @@ public class controladorDeProdutos {
 		    System.out.println(produtosID.getProdutos() + " add com sucesso!!");
 	   }	 
 	   
-	      //METODO DE REMOVE UNIDADEs
+	   //METODO DE REMOVE UNIDADEs
 	   public void RemoveUnidade(int unidade) {
 		   for (produtos produtos : produtosCadastrados) {
 			   if(produtos.getQuantidade() >= unidade) {
-				  produtos.LucrosDasVendas(unidade);
+				  produtos.removeUnidade(unidade);
 			      System.out.println("Baixa com sucesso!"); 
 			   } 
 			  produtos.removeUnidade(unidade);
 		   }
 	   }
-	   
-	   
+	   	   
 	   // METODO PARA MOSTRA O TOTAL DE INVESTIMENTO FEITO EM  DETERMINADO PRODUTO ( FINANCIAS )
-	   public double InvestimentoFeitoXLucroObtidoNoProduto(produtos produto) {
-		    if (produto != null) {
-		        System.out.println("Produto: " + produto.getProdutos());
-		        System.out.println("Investimento: " + produto.totalInvestimento() + " Reais");
-
-		    }
-
-		    return 0.0; // ou outra lógica apropriada caso o produto seja nulo
+	   public produtos InvestimentoFeitoXLucroObtidoNoProduto(produtos produto) {
+            return produto;
 		}
 	   
-	   
+	   //METODO PARA RETORNA TOTAL DE VENDAS
+	   public void TotalDeVendas() {
+		    boolean semVenda = true;
+		    double totalVendas = 0.0;
+
+		    for (produtos produto : produtosCadastrados) {
+		        double vendas = produto.getModificadoresProdutos().getTotalVendaDeTodosOsProdutos();
+		        if (vendas > 0) {
+		            totalVendas += vendas;
+		            semVenda = false;
+		        }
+		    }
+
+		    if (semVenda) {
+		        System.out.println("| Sem vendas no momento!        |");
+		    } else {
+		        System.out.println(" | Total de vendas: " + totalVendas + "       |");
+		    }
+		}
 	 
-	   
+	   //METODO PARA RETORNA O VALOR LIQUIDO
+	   public void LucroDaVendas() {
+		    boolean semLucro = true;
+
+		    for (produtos produto : produtosCadastrados) {
+		        Double lucro = produto.LucrosLiquidosDasVendas();
+
+		        if (lucro != null && lucro > 0) {
+		            System.out.println("| Total de lucro Liquido: " + lucro + "  |");
+		            semLucro = false;
+		        }
+		    }
+
+		    if (semLucro) {
+		        System.out.println("| Sem lucro no momento!         |");
+		    }
+		}
 	   
 	   
 	   
