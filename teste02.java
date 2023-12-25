@@ -13,23 +13,25 @@ public class teste02 {
       
       
 	  
-	  while(opção != 4) {
+	  while(opção != 5) {
 		  
-		  System.out.println("-------------------------");
-		  System.out.println("|     Mercado Da Vila   |");
-		  System.out.println("|-----------------------|");
-		  System.out.println("| (1)     Produtos      |");
-		  System.out.println("| (2) Adiciona produtos |");
-		  System.out.println("| (3)   busca produtos  |");
-		  System.out.println("| (4)      sair         |");
-		  System.out.println("-------------------------");
+		  System.out.println("--------------------------------------");
+		  System.out.println("|         SYS Mercado Da Vila        |");
+		  System.out.println("|------------------------------------|");
+		  System.out.println("| (1)            Produtos            |");
+		  System.out.println("| (2)        Adiciona produto        |");
+		  System.out.println("| (3)          busca produtos        |");
+		  System.out.println("| (4)            finançias           |");
+		  System.out.println("| (5)              sair              |");
+		  System.out.println("--------------------------------------");
 		   opção = scanner.nextInt();
 		      System.out.println();
 		   
 		   
 		   switch (opção) {
+		   
 		   		case 1 : {
-			
+			         controladorDeMetodos.produtosNoEstoque();
 			     break;
 		   		}
 		   		
@@ -37,11 +39,18 @@ public class teste02 {
 		   			controladorDeMetodos.AdicionaProdutos();
 		   	     break;		
 		   		}
+		   		
 		   		case 3: {
 		   			controladorDeMetodos.opçõesDeBuscaDeProduto();
 		   			break;
 		   		}
+
 		   		case 4: {
+                    controladorDeMetodos.financias();
+                    break;
+		   		}
+		   		
+		   		case 5: {
 		   			System.out.println("Saindo...");
 		   			break;
 		   		}
@@ -53,14 +62,13 @@ public class teste02 {
 		   
 		   
 		   
-		   
+		
 		   
 		   
 		   
 		   
 		   
 	  }
-	  
 	  
 	  
 
